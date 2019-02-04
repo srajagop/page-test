@@ -14,9 +14,9 @@
                 if (event.origin !== "https://ue-stage-64.logitech.com" || event.origin !== "https://www.ultimateears.com"){
                      return;
                 }                   
-                console.log('received message from ue-stage');
-                console.log('sending message to ue-stage');
-                let token = event.data; //@Dev token to be used for future communications
+                console.log('received message from '+ event.origin);                
+                let token = event.data; //@Dev token to be used for future communications                
+                console.log('sending message to '+ event.origin);
                 event.source.postMessage("Confirm",event.origin);
             }
             if(inIframe()){

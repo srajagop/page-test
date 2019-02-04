@@ -4,7 +4,24 @@
 
 </head>
 <body>
-<h1>Try Tensorflow JS right in your browser!</h1>
+<h1>Test Page</h1>
+  
+    	<script>
+  		document.addEventListener('DOMContentLoaded', function(){
+  			console.log('TEST IFRAME');
+  			function receiveMessage(event){
+  			  if (event.origin !== "https://ue-stage-64.logitech.com")
+  			    return;
+
+  			  event.source.postMessage("TEST " +
+  			                           "message: secret!",
+  			                           event.origin);
+  			}
+  			window.addEventListener("message", receiveMessage, false);
+  		});
+  		
+  	</script>
+    <div id="app"> TEST Configurator</div>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.11.2"></script>
 <script>// Define a model for linear regression.
 const model = tf.sequential();

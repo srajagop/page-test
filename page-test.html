@@ -10,7 +10,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('TEST IFRAME');
+            
             function receiveMessage(event) {
                 if (event.origin !== "https://ue-stage-64.logitech.com")
                     return;
@@ -18,7 +18,17 @@
                 console.log('sending message to ue-stage');
                 event.source.postMessage("Confirm",event.origin);
             }
-            window.addEventListener("message", receiveMessage, false);
+            if(inIframe()){
+                window.addEventListener("message", receiveMessage, false);
+            }           
+            console.log(inIframe());
+            function inIframe () {
+                try {
+                    return window.self !== window.top;
+                } catch (e) {
+                    return true;
+                }
+            }
         });
     </script>
     <div id="app"> TEST Configurator</div>

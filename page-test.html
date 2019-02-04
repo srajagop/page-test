@@ -12,7 +12,7 @@
   			function receiveMessage(event){
   			  if (event.origin !== "https://ue-stage-64.logitech.com")
   			    return;
-
+console.log('received message')
   			  event.source.postMessage("TEST " +
   			                           "message: secret!",
   			                           event.origin);

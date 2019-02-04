@@ -11,7 +11,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {            
             function receiveMessage(event) {
-                if (event.origin !== "https://ue-stage-64.logitech.com" && event.origin !== "https://www.ultimateears.com"){
+                if (event.origin !== "https://ue-stage-64.logitech.com"){
                      return;
                 }                   
                 console.log('received message from '+ event.origin);                

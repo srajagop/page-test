@@ -1,27 +1,28 @@
 <html lang="en" class="">
-  <head>
+
+<head>
 
 
 </head>
+
 <body>
-<h1>Test Page</h1>
-  
-    	<script>
-  		document.addEventListener('DOMContentLoaded', function(){
-  			console.log('TEST IFRAME');
-  			function receiveMessage(event){
-  			  if (event.origin !== "https://ue-stage-64.logitech.com")
-  			    return;
-          console.log('received message from ue-stage');
-          console.log('sending message to ue-stage')
-  			  event.source.postMessage("TEST " +
-  			                           "message: secret!",
-  			                           event.origin);
-  			}
-  			window.addEventListener("message", receiveMessage, false);
-  		});
-  		
-  	</script>
+    <h1>Test Page</h1>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('TEST IFRAME');
+            function receiveMessage(event) {
+                if (event.origin !== "https://ue-stage-64.logitech.com")
+                    return;
+                console.log('received message from ue-stage');
+                console.log('sending message to ue-stage');
+                event.source.postMessage("Confirm",event.origin);
+            }
+            window.addEventListener("message", receiveMessage, false);
+        });
+    </script>
     <div id="app"> TEST Configurator</div>
 
-</body></html>
+</body>
+
+</html>

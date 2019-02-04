@@ -16,6 +16,7 @@
                 }                   
                 console.log('received message from ue-stage');
                 console.log('sending message to ue-stage');
+                let token = event.data; //@Dev token to be used for future communications
                 event.source.postMessage("Confirm",event.origin);
             }
             if(inIframe()){
